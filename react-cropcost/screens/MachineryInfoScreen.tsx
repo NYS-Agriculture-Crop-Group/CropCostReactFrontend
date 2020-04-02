@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Input, Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { StyleSheet,  TouchableOpacity, Text, View, Dimensions } from "react-native";
-
+import {Formik, ErrorMessage} from 'formik';
 interface props{
     navigation: any;
 }
@@ -23,21 +23,14 @@ export class MachineryInfoScreen extends React.Component<props>{
         return(
             <View>
                 <Text style={{textDecorationLine: "underline", fontWeight: "bold", alignSelf: 'center'}}>
-                    Enter Information
+                    Enter Machinery Information
                 </Text>
+                <Formik initialValues={{name: ''}}></Formik>
                 <View  style={{width: this.state.width/3, alignSelf:"center", flexDirection: "column"}}>
-                    <TouchableOpacity onPress={() => console.log("Not init")} accessibilityLabel="Log In">
-                        <Text style={styles.submit_button}>
-                            Machinery Info
-                        </Text>
-                    </TouchableOpacity>
+
                 </View>
                 <View  style={{width: this.state.width/3, alignSelf:"center", flexDirection: "column"}}>
-                    <TouchableOpacity onPress={() => console.log("Not init")} accessibilityLabel="Log In">
-                        <Text style={styles.submit_button}>
-                            More to Come
-                        </Text>
-                    </TouchableOpacity>
+
                 </View>
             </View>
         )
