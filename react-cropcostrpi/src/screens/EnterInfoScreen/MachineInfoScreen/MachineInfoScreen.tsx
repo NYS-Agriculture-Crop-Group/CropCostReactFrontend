@@ -24,7 +24,7 @@ class MachineInfoScreen extends React.Component<RouteComponentProps>{
                     <div id="top-box-container" className="border m-4 p-4">
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Machine Name</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter a machine name"/>
                             <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div className="row">
