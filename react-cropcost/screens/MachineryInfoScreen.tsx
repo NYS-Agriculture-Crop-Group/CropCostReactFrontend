@@ -7,7 +7,7 @@ interface props{
     navigation: any;
 }
 
-export class HomeScreen extends React.Component<props>{
+export class MachineryInfoScreen extends React.Component<props>{
     state = Dimensions.get('window');
     handler = dims => this.setState(dims);
 
@@ -22,35 +22,20 @@ export class HomeScreen extends React.Component<props>{
     render(){
         return(
             <View>
-                <Text style={{textDecorationLine: "underline", fontWeight: "bold", alignSelf: 'center'}}>Home</Text>
+                <Text style={{textDecorationLine: "underline", fontWeight: "bold", alignSelf: 'center'}}>
+                    Enter Information
+                </Text>
                 <View  style={{width: this.state.width/3, alignSelf:"center", flexDirection: "column"}}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('EnterInfo')} accessibilityLabel="Log In">
-                        <Text style={styles.submit_button}>
-                            Enter Info
-                        </Text>
-                    </TouchableOpacity>
-
                     <TouchableOpacity onPress={() => console.log("Not init")} accessibilityLabel="Log In">
                         <Text style={styles.submit_button}>
-                            Reports
+                            Machinery Info
                         </Text>
                     </TouchableOpacity>
-
+                </View>
+                <View  style={{width: this.state.width/3, alignSelf:"center", flexDirection: "column"}}>
                     <TouchableOpacity onPress={() => console.log("Not init")} accessibilityLabel="Log In">
                         <Text style={styles.submit_button}>
-                            View Records
-                        </Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => console.log("Not init")} accessibilityLabel="Log In">
-                        <Text style={styles.submit_button}>
-                            Data Transfer
-                        </Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => console.log("Not init")} accessibilityLabel="Log In">
-                        <Text style={styles.submit_button}>
-                            Instructions
+                            More to Come
                         </Text>
                     </TouchableOpacity>
                 </View>
