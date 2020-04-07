@@ -1,0 +1,12 @@
+
+.text-container{
+    background-color: lightgrey;
+    margin: 10;
+    margin-bottom: 1vh;
+    border-color: grey;
+    border-width: 3px;
+    height: 40vh;
+    width: 80vw;
+    overflow: scroll;
+    align-content: center;
+}

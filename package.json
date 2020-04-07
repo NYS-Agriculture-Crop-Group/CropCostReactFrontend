@@ -1,0 +1,20 @@
+{
+  "name": "CropCostReactFrontend",
+  "version": "1.0.0",
+  "description": "The frontend single page web app for the RPI Crop cost project written in react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NYS-Agriculture-Crop-Group/CropCostReactFrontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NYS-Agriculture-Crop-Group/CropCostReactFrontend/issues"
+  },
+  "homepage": "https://github.com/NYS-Agriculture-Crop-Group/CropCostReactFrontend#readme"
+}
