@@ -9,7 +9,7 @@ import {
     RouteComponentProps,
     useRouteMatch
   } from "react-router-dom";
-import {MachineInfoScreenWithRouter} from './MachineInfoScreen/MachineInfoScreen';
+import MachineInfoScreen from './MachineInfoScreen/MachineInfoScreen';
 
 class EnterInfoScreen extends React.Component<RouteComponentProps>{
     constructor(props: RouteComponentProps){
@@ -50,7 +50,7 @@ class EnterInfoScreen extends React.Component<RouteComponentProps>{
                         </div>
                     </Route>
                     <Route path={`${this.props.match.url}/machines`}>
-                        <MachineInfoScreenWithRouter/>
+                        <MachineInfoScreen/>
                     </Route>
                 </Switch>
             </div>
