@@ -1,4 +1,6 @@
 import * as React from 'react';
+import {userApiLogin} from '../../shared/api/userapi';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -28,13 +30,18 @@ class LoginScreen extends React.Component<RouteComponentProps, LoginFormState>{
         //this.history = useHistory();
     }
 
-    private handleSubmit(event: React.FormEvent){
+    private async handleSubmit(event: React.FormEvent){
         //let history = useHistory();
         console.log("User Logged in");
         console.log(this.state);
         event.preventDefault();
+        if(await userApiLogin(this.state.username, this.state.password)){
+            this.props.history.push('/home');
+        } else{
+            console.log("Login Failed");
+        }
         //history.push("/");
-        this.props.history.push('/home');
+        //this.props.history.push('/home');
 
     }
 

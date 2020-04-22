@@ -1,6 +1,8 @@
 import { withFormik, FormikProps } from "formik";
 import * as React from 'react';
 import * as Yup from "yup";
+import {makeMachine} from '../../../shared/api/machineapi'; 
+import {APIResponse} from '../../../shared/api/api';
 import {
     BrowserRouter as Router,
     Switch,
@@ -53,8 +55,8 @@ class MachineInfoScreen extends React.Component<FormikProps<MachineFormValues>>{
                 <form onSubmit={handleSubmit}>
                     <div id="top-box-container" className="border m-4 p-4">
                         <div className="form-group">
-                            <label htmlFor="motorizedMachinery">Machine Name</label>
-                            <input name="motorizedMachinery"
+                            <label htmlFor="name">Machine Name</label>
+                            <input name="name"
                                 type="text"
                                 className="form-control"
                                 placeholder="Enter a machine name"
@@ -66,7 +68,7 @@ class MachineInfoScreen extends React.Component<FormikProps<MachineFormValues>>{
                         <div className="row">
                             <div className="col-md-5 form-group">
                                 <label htmlFor="MPG">MPG</label>
-                                <input name="MPG"
+                                <input name="efficiency"
                                     type="number"
                                     className="form-control"
                                     placeholder="0"
@@ -80,7 +82,7 @@ class MachineInfoScreen extends React.Component<FormikProps<MachineFormValues>>{
                             </div>
                             <div className="col-md-5 form-group">
                                 <label htmlFor="exampleInputEmail1">HP</label>
-                                <input name="hp"
+                                <input name="efficiency"
                                     type="number"
                                     className="form-control"
                                     placeholder="0"
@@ -110,7 +112,7 @@ class MachineInfoScreen extends React.Component<FormikProps<MachineFormValues>>{
                             <div className="col-md-6 form-group">
                                 <label htmlFor="AmountInput">Amount</label>
                                 <input 
-                                    name="amount"
+                                    name="haulingCapacity"
                                     type="number"
                                     className="form-control"
                                     placeholder="0"
@@ -162,7 +164,7 @@ class MachineInfoScreen extends React.Component<FormikProps<MachineFormValues>>{
                         </div>
                         <div className="col-md-6">
                             <input 
-                                name="acres"
+                                name="operatingCost"
                                 type="number"
                                 className="form-control"
                                 placeholder="$/ac" 
@@ -179,7 +181,7 @@ class MachineInfoScreen extends React.Component<FormikProps<MachineFormValues>>{
                         </div>
                         <div className="col-md-6">
                             <input 
-                                name="hours"
+                                name="operatingCost"
                                 type="number"
                                 className="form-control"
                                 placeholder="$/hr"
@@ -195,7 +197,7 @@ class MachineInfoScreen extends React.Component<FormikProps<MachineFormValues>>{
                         <div className="col-md-12">
                             <label htmlFor="p-date">Purchase Date</label>
                             <input 
-                                name="pdate"
+                                name="purchaseDate"
                                 type="date"
                                 className="form-control"
                                 placeholder=""
@@ -334,22 +336,17 @@ const MachineInfoScreenWithFormik = withFormik<{}, MachineFormValues>({
         //handle return value
         //re enable submit value if possible
         console.log(values);
-        fetch("/api/machines", {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                "Content-Type": "application/json",
-                "Authentication": `Token ${"la"}`
-            },
-            body: JSON.stringify(values)
-        }).then((response) => {
-            console.log(response);
-            setSubmitting(false);
-        }).catch((err) => {
-            console.log(err);
-        })
-        
-
+        makeMachine(values)
+            .then((result: APIResponse) => {
+                //show message saying machine was created
+                console.log(result);
+                setSubmitting(false);
+            })
+            .catch((err) => {
+                //show error message
+                console.log(err);
+                setSubmitting(false);
+            });
     }
 })(MachineInfoScreen);
 
