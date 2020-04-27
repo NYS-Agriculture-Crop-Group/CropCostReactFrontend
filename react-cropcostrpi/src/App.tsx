@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import { EnterInfoScreenWithRouter } from './screens/EnterInfoScreen/EnterInfoScreen';
-
+import {ReportScreenWithRouter} from './screens/ReportsScreen/ReportsScreen';
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
         <Route path='/login'><LoginScreenWithRouter/></Route>
         <Route path='/home'><HomeScreenWithRouter/></Route>
         <Route path='/info'><EnterInfoScreenWithRouter/></Route>
+        <Route path="/reports"><ReportScreenWithRouter/></Route>
       </Switch>
     </Router>
   );

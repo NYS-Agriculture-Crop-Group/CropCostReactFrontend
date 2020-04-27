@@ -24,12 +24,13 @@ interface MachineAPIValues{
 
 export const getMachines = async () => {
     const session = getSession();
+    console.log(session);
     const response = await fetch("/api/machines", {
         method: "GET",
         mode: "cors",
         headers: {
             "Content-Type": "application/json",
-            "Authentication": `Token ${session}`
+            "Authorization": `Token ${session}`
         }
     });
 
