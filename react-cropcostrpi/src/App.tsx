@@ -14,7 +14,7 @@ import {
 import './App.css';
 import { EnterInfoScreenWithRouter } from './screens/EnterInfoScreen/EnterInfoScreen';
 import {ReportScreenWithRouter} from './screens/ReportsScreen/ReportsScreen';
-
+import {CreateUserScreenWithRouter} from './screens/LoginScreen/CreateUserScreen';
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
       <Switch>
         <Route exact path="/"><StartScreen/></Route>
         <Route path='/login'><LoginScreenWithRouter/></Route>
+        <Route path='/signup'><CreateUserScreenWithRouter/></Route>
         <Route path='/home'><HomeScreenWithRouter/></Route>
         <Route path='/info'><EnterInfoScreenWithRouter/></Route>
         <Route path="/reports"><ReportScreenWithRouter/></Route>

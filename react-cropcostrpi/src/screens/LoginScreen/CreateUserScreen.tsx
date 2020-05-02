@@ -18,7 +18,7 @@ interface LoginFormState{
     password: string;
 }
 
-class LoginScreen extends React.Component<RouteComponentProps, LoginFormState>{
+class CreateUserScreen extends React.Component<RouteComponentProps, LoginFormState>{
     
     constructor(props: any){
         super(props);
@@ -36,7 +36,7 @@ class LoginScreen extends React.Component<RouteComponentProps, LoginFormState>{
         console.log(this.state);
         event.preventDefault();
         if(await userApiCreateUser(this.state.username, this.state.password, this.state.real_name)){
-            this.props.history.push('/home');
+            this.props.history.push('/login');
         } else{
             console.log("Login Failed");
         }
@@ -77,5 +77,5 @@ class LoginScreen extends React.Component<RouteComponentProps, LoginFormState>{
     }
 }
 
-export const LoginScreenWithRouter = withRouter(LoginScreen);
+export const CreateUserScreenWithRouter = withRouter(CreateUserScreen);
 
