@@ -19,6 +19,7 @@ export const userApiLogin = async (email: string, password: string) => {
         })
     })
     let res_json = await response.json();
+    console.log(res_json);
     if(response.status > 300){
         console.log(res_json);
         return false;
